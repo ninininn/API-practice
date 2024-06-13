@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API practice</title>
+    <link rel="icon" href="./1706667652151.jpg">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #get-data {
+            border: none;
+            padding: 12px 32px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            vertical-align: middle;
+            transition: 0.4s background-color ease-in-out, 0.4s color ease-in-out;
+        }
+
+        #get-data:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .text {
+            width: 50%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            border: 1px solid #8e8e8e;
+            padding: 16px 20px;
+            border-radius: 8px;
+        }
+
+        #selectList {
+            width: 200px;
+            height: 40px;
+            border-radius: 4px;
+            border: none;
+            box-shadow: 0 0 1px 0px #858585;
+            cursor: pointer;
+        }
+
+        #selectList:hover {
+            border: 1px solid #7399cf;
+        }
+
+        .search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .search span {
+            margin-right: 8px;
+        }
+
+        .content-block {
+            height: 100vh;
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ececec;
+            padding: 32px;
+        }
+
+        #content-table {
+            display: none;
+            text-align: center;
+            border-collapse: collapse;
+            background-color: #fafafa;
+            border-radius: 8px;
+            box-shadow: 0 0 1px 0px #8e8e8e;
+        }
+
+        .table-head {
+            background-color: #3b3b3b;
+            color: #fafafa;
+        }
+
+        .table-head th:first-child {
+            border-radius: 8px 0 0 0;
+        }
+
+        .table-head th:last-child {
+            border-radius: 0 8px 0 0;
+        }
+
+        td,
+        th {
+            padding: 16px;
+        }
+
+        tr:not(:last-child) {
+            border-radius: 8px;
+            padding: 16px;
+            background-color: #fafafa;
+            border-bottom: 1px solid #b2b2b2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>臺北市立圖書館查詢座位狀況</h1>
+    <div class="search">
+        <label for="">
+            <span>選擇分館</span>
+            <select name="branchName" id="selectList"></select>
+        </label>
+        <button id="get-data">Get</button>
+    </div>
+    <div class="content-block">
+        <table id="content-table">
+            <tr class="table-head">
+                <th>區域編號</th>
+                <th>分館名稱</th>
+                <th>樓層</th>
+                <th>區域名稱</th>
+                <th>剩餘座位數</th>
+                <th>總座位數</th>
+            </tr>
+        </table>
+    </div>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
