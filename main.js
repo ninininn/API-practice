@@ -18,7 +18,6 @@ selectList.addEventListener("click",()=>{
             }
             //篩選重複分館名稱
             let optionSet = new Set(optionArray);
-            // console.log(optionArray,optionSet)
             for(let name of optionSet){
                 let options = document.createElement('option')
                 options.textContent=name
@@ -39,7 +38,6 @@ getBtn.addEventListener("click",()=>{
 
 //顯示分館座位
 function printTitle(data){
-    // contentTable.style.display="none";
     contentTable.style.display="table";
     let selectValue = selectList.value;
     for (let keys of data){
@@ -63,9 +61,7 @@ function printTitle(data){
 //移除舊資料
 function removeBefore(value){
     let data = document.querySelectorAll("tr")
-    console.log(data)
     for(let name of data){
-        console.log(name.dataset.name)
         if(name.dataset.name !== value &&name.className !== "table-head"){
             name.textContent=""
         }
